@@ -1,5 +1,21 @@
 ## Udacity-Starbucks-Project
 
+# Python Libraries Used
+
+-Python Data Analysis Library
+-Numpy
+-Matplotlib
+-seaborn: Statistical Data Visualization
+-os — Miscellaneous operating system interfaces
+-scikit-learn: Machine Learning in Python
+
+# References 
+
+https://stackoverflow.com/questions/40245507/python-pandas-selecting-rows-whose-column-value-is-null-none-nan
+
+https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression
+
+https://www.google.com/search?client=firefox-b-d&ei=WDmZXNLXEInTkgWLpZKYDQ&q=multiple+regression+in+python&oq=multiple+regression+in+python&gs_l=psy-ab.3..0i203l5j0i22i30l5.1853.2595..2782...0.0..0.77.505.7......0....1..gws-wiz.......0i71j35i39j0j0i22i10i30.QNIRBf9QRfA
 
 # How consumers behave on the Starbucks reward app (Udacity Project)
 
@@ -32,6 +48,10 @@ Next, we look at the behavior of different types of consumers on this platform. 
 
 When we look at the effectiveness of the different programs, we find that information on new products increase purchases, as well as reward programs. Interestingly, buy-one-get-one-free programs, on average, reduce the amount spent on the mobile app. This is plausible because consumers save money by not having to buy the additional item.
 
-# Summary
+# Improvement section
+
+In future specifications, it may be possible to apply machine learning to predict transactions based on both consumer characteristics and reward programs. This would provide companies a powerful tool for directing their marketing activities. Potential applications may be random forests or neural networks.
+
+# Summary of the results
 
 In this blog, we have identified clusters of consumers using the Starbucks reward app. We have analyzed the characteristics of different consumer clusters and their behavior on the app. Finally, we have studied the effectiveness of different reward programs. The key insight is that informational and reward programs boost transactions, while buy-one-get-one-free programs do not. In fact, they decrease transactions.
