@@ -13132,9 +13132,32 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Project-overview">Project overview<a class="anchor-link" href="#Project-overview">&#182;</a></h2><p>Companies need to gather insights to understand how consumers respond to various types of special reward programs. Based on these insights, companies can effectivley manage these programs and create a value-added for their customers. In this post, I try to outline ways how companies can observe patterns in their consumer data related to such reward programs.</p>
+<p>A very interesting references is provided here: <a href="https://digitalmarketinginstitute.com/blog/27-02-18-the-what-why-and-how-of-360-degree-customer-view">https://digitalmarketinginstitute.com/blog/27-02-18-the-what-why-and-how-of-360-degree-customer-view</a></p>
+<p>Based on simulated data of consumer behavior on the Starbucks rewards mobile application, I provide a careful analysis of consumer behavior. This is part of the Udacity Nanodegree Data Science.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Problem-statements">Problem statements<a class="anchor-link" href="#Problem-statements">&#182;</a></h1><p>I try to answer the following three questions. Please keep in mind that all results are obtained from simulated data and do not necessarily apply to the real world.</p>
+<ol>
+<li>What consumers use the Starbucks rewards mobile application? Are there differences between men and women?</li>
+<li>How do different types of consumers behave on this platform?</li>
+<li>How effectively are different reward programs in incentivising purchases?</li>
+</ol>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load the relevant packages</span>
@@ -13168,14 +13191,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Link <a href="https://medium.com/@patrick.ring/how-consumers-behave-on-the-starbucks-reward-app-udacity-project-4082575dc3fc">https://medium.com/@patrick.ring/how-consumers-behave-on-the-starbucks-reward-app-udacity-project-4082575dc3fc</a></p>
+<p>Link to my blog: <a href="https://medium.com/@patrick.ring/how-consumers-behave-on-the-starbucks-reward-app-udacity-project-4082575dc3fc">https://medium.com/@patrick.ring/how-consumers-behave-on-the-starbucks-reward-app-udacity-project-4082575dc3fc</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in the json files</span>
@@ -13189,15 +13212,22 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Preprocessing">Preprocessing<a class="anchor-link" href="#Preprocessing">&#182;</a></h1><p>We need to get the date into the right format such that merging is possible. This is done in the follow septs:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We first define a function that converts a string into a dateime object. This funciton will be used later. </span>
 <span class="k">def</span> <span class="nf">convert_to_datetime</span><span class="p">(</span><span class="n">elem</span><span class="p">):</span>
-    <span class="s2">&quot;&quot;&quot;Converts a string to a datetime object</span>
-<span class="s2">    return datetime.strptime(str(elem), &#39;%Y%m</span><span class="si">%d</span><span class="s2">&#39;)</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">),</span> <span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13207,7 +13237,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First we look at and clean the portfolio data set.</span>
@@ -13224,7 +13254,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -13360,7 +13390,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Clean-the-offer-portfolio-data">Clean the offer portfolio data<a class="anchor-link" href="#Clean-the-offer-portfolio-data">&#182;</a></h2>
+<h2 id="Preprocessing:-Clean-the-offer-portfolio-data">Preprocessing: Clean the offer portfolio data<a class="anchor-link" href="#Preprocessing:-Clean-the-offer-portfolio-data">&#182;</a></h2>
 <pre><code>Change the name of the 'id' column to 'offerid'
 Change the name of the 'duration' column to 'durationdays'
 Change the name of the 'offer_type' column to 'offertype'
@@ -13373,7 +13403,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First, we choose a common labeling of the variables.</span>
@@ -13397,7 +13427,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Look at the new data-set</span>
@@ -13414,7 +13444,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[41]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -13547,14 +13577,14 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Question">1. Question<a class="anchor-link" href="#1.-Question">&#182;</a></h1><p>What is the relation between offer difficulty and durationdays</p>
+<p>Question: What is the relation between offer difficulty and durationdays</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;durationdays&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;difficulty&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -13590,7 +13620,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">portfolio</span><span class="p">[</span><span class="s1">&#39;durationdays&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">portfolio</span><span class="p">[</span><span class="s1">&#39;difficulty&#39;</span><span class="p">])</span>
@@ -13606,7 +13636,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -13624,13 +13654,14 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="1.-Answer:-Very-high-positive-correlation">1. Answer: Very high positive correlation<a class="anchor-link" href="#1.-Answer:-Very-high-positive-correlation">&#182;</a></h1>
+<p>Answer: Very high positive correlation</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Second, we look at and clean the customer profile data set.</span>
@@ -13647,7 +13678,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[44]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13732,7 +13763,7 @@ Replace the 'offertype' and 'channels' columns with their respective one hot enc
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Clean-the-customer-profile-data">Clean the customer profile data<a class="anchor-link" href="#Clean-the-customer-profile-data">&#182;</a></h1>
+<h1 id="Preprocessing:-Clean-the-customer-profile-data">Preprocessing: Clean the customer profile data<a class="anchor-link" href="#Preprocessing:-Clean-the-customer-profile-data">&#182;</a></h1>
 <pre><code>Remove customers with missing income data
 Remove customer profiles where the gender attribute is missing
 Change the name of the 'id' column to 'customerid'
@@ -13746,7 +13777,7 @@ Transform a customer's gender from a character to a number</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove customers with unspecified income</span>
@@ -13783,7 +13814,7 @@ Transform a customer's gender from a character to a number</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merge data</span>
@@ -13797,7 +13828,7 @@ Transform a customer's gender from a character to a number</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Look at the data</span>
@@ -13814,7 +13845,7 @@ Transform a customer's gender from a character to a number</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -13995,7 +14026,7 @@ Transform a customer's gender from a character to a number</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -14011,7 +14042,7 @@ Transform a customer's gender from a character to a number</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[94]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14254,7 +14285,7 @@ Transform a customer's gender from a character to a number</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">)[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -14270,7 +14301,7 @@ Transform a customer's gender from a character to a number</code></pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[97]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14290,7 +14321,7 @@ Name: age, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">profile</span><span class="p">[</span><span class="s2">&quot;income&quot;</span><span class="p">])</span>
@@ -14306,13 +14337,13 @@ Name: age, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6220ea6550&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6d1b47da20&gt;</pre>
 </div>
 
 </div>
@@ -14338,7 +14369,7 @@ Name: age, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">male_customers</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="n">profile</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
@@ -14352,7 +14383,7 @@ Name: age, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">male_customers</span><span class="p">[</span><span class="s2">&quot;income&quot;</span><span class="p">])</span>
@@ -14388,7 +14419,7 @@ Name: age, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">female_customers</span><span class="p">[</span><span class="s2">&quot;income&quot;</span><span class="p">])</span>
@@ -14424,7 +14455,7 @@ Name: age, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># We look at and clean the transcript data set.</span>
@@ -14441,7 +14472,7 @@ Name: age, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -14520,7 +14551,7 @@ Name: age, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Clean-the-transaction-data">Clean the transaction data<a class="anchor-link" href="#Clean-the-transaction-data">&#182;</a></h1>
+<h1 id="Preprocessing:-Clean-the-transaction-data">Preprocessing: Clean the transaction data<a class="anchor-link" href="#Preprocessing:-Clean-the-transaction-data">&#182;</a></h1>
 <pre><code>Change the name of the 'person' column to 'customerid'
 Remove customer id's that are not in the customer profile DataFrame
 Convert time variable units from hours to days
@@ -14537,7 +14568,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;data/transcript.json&#39;</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14554,7 +14585,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -14632,7 +14663,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remove customer id&#39;s that are not in the customer profile DataFrame</span>
@@ -14653,7 +14684,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -14766,7 +14797,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">transcript</span><span class="p">,</span> <span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -14779,7 +14810,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span>
@@ -14795,7 +14826,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[56]:</div>
+    <div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -15514,7 +15545,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;offer_id_new&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;offer id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span> <span class="o">&amp;</span> <span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;offer_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span><span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;offer_id&#39;</span><span class="p">],</span><span class="n">transcript</span><span class="p">[</span><span class="s1">&#39;offer id&#39;</span><span class="p">])</span>
@@ -15527,7 +15558,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;offer id&#39;</span><span class="p">,</span><span class="s1">&#39;offer_id&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15540,7 +15571,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;offer_id_new&#39;</span><span class="p">:</span><span class="s1">&#39;offer_id&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15553,7 +15584,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transcript</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
@@ -15569,7 +15600,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[60]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -15815,7 +15846,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">percent_removed</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">select_data</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">select_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -15847,7 +15878,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Convert from hours to days</span>
@@ -15861,7 +15892,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pattern_obj</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;^offer (?:received|viewed|completed)&#39;</span><span class="p">)</span>
@@ -15889,7 +15920,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span> <span class="c1">#Create a DataFrame that describes customer offer events</span>
@@ -15916,7 +15947,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">offer_data</span><span class="o">=</span><span class="n">offer_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">])</span>
@@ -15929,7 +15960,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">transaction</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="s1">&#39;timedays&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15943,7 +15974,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -15959,7 +15990,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[86]:</div>
+    <div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -16138,9 +16169,16 @@ Create a DataFrame that describes customer transaction events
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Preprocessing:-Now-it-is-time-to-merge-the-data-files!">Preprocessing: Now it is time to merge the data files!<a class="anchor-link" href="#Preprocessing:-Now-it-is-time-to-merge-the-data-files!">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_combined_records</span><span class="p">(</span><span class="n">customer_id</span><span class="p">,</span>
@@ -16280,7 +16318,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16296,7 +16334,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[105]:</div>
+    <div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -16520,7 +16558,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;clean.csv&#39;</span><span class="p">)</span>
@@ -16533,7 +16571,20 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_data</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;clean.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">profile</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16549,7 +16600,7 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[117]:</div>
+    <div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -16730,7 +16781,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clean_data</span><span class="o">=</span><span class="n">clean_data</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;customerid&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;customerid&#39;</span><span class="p">)</span>
@@ -16743,7 +16794,7 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">clean_data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
@@ -16759,13 +16810,14 @@ Create a DataFrame that describes customer transaction events
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[119]:</div>
+    <div class="prompt output_prompt">Out[56]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&#39;Unnamed: 0&#39;,
+ &#39;Unnamed: 0.1&#39;,
  &#39;time&#39;,
  &#39;offerid&#39;,
  &#39;customerid&#39;,
@@ -16829,17 +16881,77 @@ Create a DataFrame that describes customer transaction events
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h1><p>My analysis: I use a multple regression to identify relations between the total amount of transactions and consumer characterisitcs, and different reward programs. For this purpose, I first need to define the number dependent variable below (X) and the independent variables (Y). For the analysis I use, the statsmodels package. More information on multiple regression can be found here: <a href="https://de.wikipedia.org/wiki/Multiple_lineare_Regression">https://de.wikipedia.org/wiki/Multiple_lineare_Regression</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/opt/conda/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
+  from pandas.core import datetools
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># How do differnt consumers behave on the app?pr</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">[[</span><span class="s1">&#39;income_y&#39;</span><span class="p">,</span> <span class="s1">&#39;gender_y&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">]]</span> <span class="c1"># here we have 2 variables for multiple regression. If you just want to use one variable for simple linear regression, then use X = df[&#39;Interest_Rate&#39;] for example.Alternatively, you may add additional variables within the brackets</span>
 <span class="n">Y</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">[</span><span class="s1">&#39;totalamount&#39;</span><span class="p">]</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">linear_model</span>
+</pre></div>
 
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Analysis">Analysis<a class="anchor-link" href="#Analysis">&#182;</a></h1><p>We set a model of the form: x ~ y1 + y2+ y3 + intercept. y1 is the income variable; y2 is a gender dummy, and y3 is a continious variable for age.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define the model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -16849,12 +16961,10 @@ Create a DataFrame that describes customer transaction events
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
-<span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> 
- 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print the model</span>
 <span class="n">print_model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">print_model</span><span class="p">)</span>
 </pre></div>
@@ -16878,8 +16988,8 @@ Create a DataFrame that describes customer transaction events
 Dep. Variable:            totalamount   R-squared:                       0.247
 Model:                            OLS   Adj. R-squared:                  0.246
 Method:                 Least Squares   F-statistic:                     7152.
-Date:                Sun, 24 Mar 2019   Prob (F-statistic):               0.00
-Time:                        19:44:29   Log-Likelihood:            -3.5802e+05
+Date:                Tue, 26 Mar 2019   Prob (F-statistic):               0.00
+Time:                        21:16:38   Log-Likelihood:            -3.5802e+05
 No. Observations:               65585   AIC:                         7.160e+05
 Df Residuals:                   65582   BIC:                         7.161e+05
 Df Model:                           3                                         
@@ -16908,6 +17018,22 @@ strong multicollinearity or other numerical problems.
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h1><p>This analysis reveals that consumers with higher incomes have significantly higher total transactions (not surprising); older people and women, on average, as well.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Metrics">Metrics<a class="anchor-link" href="#Metrics">&#182;</a></h1><p>When we look at the R² of the model as a measure of godness of fit, we find that about 25% of the variance in transactions can be explained by consumer characteristics. This is actually quite a lot.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -16983,6 +17109,22 @@ Warnings:
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Results-and-Metrics">Results and Metrics<a class="anchor-link" href="#Results-and-Metrics">&#182;</a></h1><p>When we look at the effectiveness of the different programs, we find that information on new products increase purchases, as well as reward programs. Interestingly, buy-one-get-one-free programs, on average, reduce the amount spent on the mobile app. This is plausible because consumers save money by not having to buy the additional item. When we look at the R² of the model as a measure of godness of fit, we find that about 17% of the variance in transactions can be explained by different types of reward programs. This is actually a quite high number.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Outlook-and-potential-improvements">Outlook and potential improvements<a class="anchor-link" href="#Outlook-and-potential-improvements">&#182;</a></h1><p>In future specifications, it may be possible to apply machine learning to predict transactions based on both consumer characteristics and reward programs. This would provide companies a powerful tool for directing their marketing activities. Potential applications may be random forests or neural networks.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
